@@ -1,4 +1,6 @@
-package Homework18.Homework18demo;
+package Homework18.Homework18demo.model;
+
+import Homework18.Homework18demo.exeption.ThereIsNoDeportation;
 
 import java.util.Objects;
 

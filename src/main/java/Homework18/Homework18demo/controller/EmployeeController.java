@@ -1,14 +1,13 @@
-package Homework18.Homework18demo;
+package Homework18.Homework18demo.controller;
 
-import org.apache.commons.lang3.StringUtils;
+import Homework18.Homework18demo.model.Employee;
+import Homework18.Homework18demo.Service.EmployeeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/employee")
