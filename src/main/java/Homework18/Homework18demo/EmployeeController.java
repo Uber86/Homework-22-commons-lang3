@@ -1,5 +1,6 @@
 package Homework18.Homework18demo;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +22,11 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/add")
-    public void addEmployee(@RequestParam String firstName, @RequestParam String lastName, @RequestParam int salary, @RequestParam int deport) {
+    public void addEmployee(@RequestParam String firstName,
+                            @RequestParam String lastName,
+                            @RequestParam int salary,
+                            @RequestParam int deport) {
+        service.validate(firstName,lastName);
         service.addEmployee(firstName, lastName, salary, deport);
     }
 
@@ -40,6 +45,8 @@ public class EmployeeController {
         return service.getAll();
 
     }
+
+
 
 
 }

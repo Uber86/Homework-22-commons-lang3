@@ -29,7 +29,7 @@ public class DepartmanController {
     }
 
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "/all", params = "departmentId")
     public List<Employee> all(@RequestParam int departmentId) {
         return departmanService.employeeAllDep(departmentId);
     }
