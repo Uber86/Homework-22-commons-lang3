@@ -84,7 +84,7 @@ public class EmployeeService implements EmployeeServicee{
     }
 
 
-    void validate(String... values) {
+    public void validate(String... values) {
         for (String value : values) {
             if (!StringUtils.isAlpha(value)) {
                 throw new ValidateExeption();
