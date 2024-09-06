@@ -1,5 +1,7 @@
-package Homework18.Homework18demo;
+package Homework18.Homework18demo.controller;
 
+import Homework18.Homework18demo.model.Employee;
+import Homework18.Homework18demo.Service.DepartmanService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,7 +31,7 @@ public class DepartmanController {
     }
 
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "/all", params = "departmentId")
     public List<Employee> all(@RequestParam int departmentId) {
         return departmanService.employeeAllDep(departmentId);
     }

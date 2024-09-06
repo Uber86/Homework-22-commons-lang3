@@ -1,4 +1,4 @@
-package Homework18.Homework18demo;
+package Homework18.Homework18demo.exeption;
 
 public class EmployeeNotFoundException extends RuntimeException {
     public EmployeeNotFoundException() {

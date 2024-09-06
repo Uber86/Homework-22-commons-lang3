@@ -1,5 +1,11 @@
-package Homework18.Homework18demo;
+package Homework18.Homework18demo.Service;
 
+import Homework18.Homework18demo.exeption.EmployeeAlreadyAddedException;
+import Homework18.Homework18demo.exeption.EmployeeNotFoundException;
+import Homework18.Homework18demo.exeption.EmployeeStorageIsFullException;
+import Homework18.Homework18demo.exeption.ValidateExeption;
+import Homework18.Homework18demo.model.Employee;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,7 +47,7 @@ public class EmployeeService implements EmployeeServicee{
 
     @Override
     public void addEmployee(String firstName, String lastName, int salary, int deport) {
-        Employee employee = new Employee(firstName, lastName, salary, deport);
+        Employee employee = new Employee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName), salary, deport);
         if (employees.size() > maxEmployee) {
             throw new EmployeeStorageIsFullException();
         }
@@ -75,6 +81,15 @@ public class EmployeeService implements EmployeeServicee{
     @Override
     public Collection<Employee> getAll() {
         return Collections.unmodifiableCollection(employees);
+    }
+
+
+    public void validate(String... values) {
+        for (String value : values) {
+            if (!StringUtils.isAlpha(value)) {
+                throw new ValidateExeption();
+            }
+        }
     }
 
 
